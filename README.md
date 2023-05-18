@@ -8,4 +8,7 @@ INTEGRAÇÃO:
   Para integrar o projeto é bem simples,apenas mudar a linha 20, para a porta usb onde o arduino está conectado,salvar o arquivo.
   Abra o terminal na mesma pasta do arquivo .py e execute python arquivo.py. Após isso o programa vai abrir, para finalizar o programa, é só pressionar
   a tecla Enter.
+  
+  
+  
 Link do Video - https://youtu.be/C1w56iPU8-Q
