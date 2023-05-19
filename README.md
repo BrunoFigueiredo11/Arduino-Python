@@ -10,5 +10,12 @@ INTEGRAÇÃO:
   a tecla Enter.
   
   
+  Integrantes - 4SIR
+85967 - Bruno Figueiredo Sousa
+84492 - Eduardo Fernando Serafim Santos
+84567 - Felipe Baptista
+85535 - Leonardo Amorim Rombalde
+85959 - Vitor Rezende Passos
+  
   
 Link do Video - https://youtu.be/C1w56iPU8-Q
