@@ -1,0 +1,119 @@
+------------------------------ QUESTÃO 01 -----------------------
+void setup()
+{
+  Serial.begin(9600);
+  Serial.println("Hello World!");  
+}
+void loop(){  
+}
+------------------------------ QUESTÃO 02 -----------------------
+void setup()
+{
+  Serial.begin(9600); 
+}
+void loop(){  
+  if (Serial.available() > 0) {
+  Serial.println("digite o primeiro valor");
+  int num1 = Serial.parseInt();
+  Serial.println("digite o segundo valor");
+  int num2 = Serial.parseInt();
+    Serial.println(num1+num2);}
+}
+------------------------------ QUESTÃO 03 -----------------------
+void setup()
+{
+  Serial.begin(9600);   
+  Serial.println("digite o valor");
+}
+void loop(){  
+  if (Serial.available() > 0) {
+  int num1 = Serial.parseInt();
+    if((num1)% 2 == 0){
+    Serial.println("Valor par");
+    }else{
+     Serial.println("Valor impar");
+    }
+    if(num1<0){
+    num1 = 1;
+    }else{
+    num1 = 2;
+    }
+    switch(num1){
+   
+    case 1:      
+     Serial.println("Valor negativo");
+     break;
+      case 2: Serial.println("Valor positivo");
+      break;
+    }
+  }
+}
+------------------------------ QUESTÃO 04 -----------------------
+int numero;
+void setup()
+{
+  Serial.begin(9600);  
+}
+void loop()
+{
+  int anterior = 0;
+  int atual = 1;
+  int proximo = 1;
+   if(Serial.available()){
+  	numero = Serial.parseInt();
+     for(int i = 0; i < numero; i++){
+     	Serial.println(proximo);       	
+     	proximo = atual + anterior;
+       	anterior = atual;
+       	atual = proximo;      
+     }   
+ 	} 
+}
+
+------------------------------ QUESTÃO 05 -----------------------
+int calculaCelsius(int fahrenheit){
+  int celsius = 0;
+  if(fahrenheit>32){
+    celsius = (fahrenheit - 32) /1.8;
+  }
+  return celsius;
+}
+
+int calculaFahrenheit(int celsius){
+  int fahrenheit = (celsius*1.8)+32;
+  return fahrenheit;
+}
+
+void setup()
+{
+  Serial.begin(9600);   
+  Serial.println("digite o valor");  
+}
+
+int valor;
+String conv = "";
+bool aux = false;
+
+
+void loop(){  
+  if (Serial.available() > 0 && !aux) {
+    valor = Serial.parseInt(); 
+    Serial.println("Escolha F para Fahrenheit \nou C para Celsius ");
+    aux = true;
+    delay(2000);
+  }
+  if (Serial.available() > 0 && aux){
+    conv=Serial.readString();
+  	aux = false;
+    
+  	if(conv == "F"){
+    	Serial.print(calculaFahrenheit(valor));
+        Serial.println("ºF");
+  	}else if(conv == "C"){
+      Serial.println(calculaCelsius(valor));
+      Serial.println("ºC");
+  	}
+    
+  }
+  
+}
